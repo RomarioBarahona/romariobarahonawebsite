@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>About Me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Me</title>
+    <link rel="stylesheet" href="design.css">
+    <style>
+        h1 {text-align: center;}
+    </style>
 </head>
+
 <body>
-	<header>
-		<h1>About Me</h1>
-		<nav>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="aboutme.html">About Me</a></li>
-				<li><a href="projects.html">Projects</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<h2>About Me</h2>
-		<p>[Placeholder]</p>
-	</main>
-	<footer>
-		<p>&copy; 2023 My Website. All rights reserved.</p>
-	</footer>
+    <header>
+        <h1>About Me</h1>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </div>
+
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
+            <h2>About Me</h2>
+            <p>[Placeholder]</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 My Website. All rights reserved.</p>
+        </footer>
+    </header>
+
+    <script>
+        //JavaScript code for Expanding and Collapsing the Navigation Menu
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+          }
+
+    </script>
 </body>
+
 </html>

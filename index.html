@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Romario Barahona</title>
+	<link rel="stylesheet" href="design.css">
+	<style>
+		h1 {text-align: center;}
+	</style>
 </head>
+
 <body>
 	<header>
 		<h1>Welcome to My Website</h1>
-		<nav>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="aboutme.html">About Me</a></li>
-				<li><a href="projects.html">Projects</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</nav>
 	</header>
-	<main>
+	<div id="mySidebar" class="sidebar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="aboutme.html">About Me</a></li>
+		<li><a href="projects.html">Projects</a></li>
+		<li><a href="contact.html">Contact</a></li>
+	</div>
+
+	<div id="main">
+		<button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
 		<h2>Content Heading</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam condimentum enim vel sapien finibus, a vehicula risus tristique. Duis bibendum leo eu tortor finibus, at fringilla dui facilisis. Proin euismod lacus eget est varius lobortis. Nam vestibulum lobortis lorem, at rutrum tellus dignissim vel. Nulla facilisi. </p>
-	</main>
-	<footer>
-		<p>&copy; 2023 My Website. All rights reserved.</p>
-	</footer>
+		<p>Welcome to my website!</p>
+
+		<footer>
+			<p>&copy; 2023 My Website. All rights reserved.</p>
+		</footer>
+	</div>
+
+	<script>
+		//JavaScript code for Expanding and Collapsing the Navigation Menu
+		function openNav() {
+			document.getElementById("mySidebar").style.width = "250px";
+			document.getElementById("main").style.marginLeft = "250px";
+		  }
+		  
+		  function closeNav() {
+			document.getElementById("mySidebar").style.width = "0";
+			document.getElementById("main").style.marginLeft= "0";
+		  }
+	</script>
 </body>
 </html>
