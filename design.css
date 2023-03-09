@@ -1,63 +1,152 @@
-/* The sidebar menu */
-.sidebar {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0;
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+/* Top Navigation Bar */
+html {
+  background: #fafafa;
+  font-family: Roboto, sans-serif;
 }
 
-/* The sidebar links */
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
+body {
+  margin: 0;
+}
+
+nav {
+  margin: 0;
+  overflow: hidden;
+  background: #333333;
   transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidebar a:hover {
-  color: #f1f1f1;
+.nav-content {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
-/* Position and style the close button (top right corner) */
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.nav-content a {
+  display: block;
+  font-size: 14px;
+  line-height: 44px;
+  text-decoration: none;
+  transition: all 0.3s;
+  color: #ffffff;
 }
 
-/* The button used to open the sidebar */
-.openbtn {
-  font-size: 20px;
+.nav-content a:hover,
+.nav-icon:hover,
+.search-icon:hover {
+  opacity: 0.7;
+}
+
+.nav-links {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-icon {
+  display: none;
+  grid-gap: 5px;
+  grid-template-columns: auto;
+  padding: 17px 0;
+  height: 10px;
   cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
-  border: none;
+  transition: all 0.3s;
 }
 
-.openbtn:hover {
-  background-color: #444;
+.bar {
+  height: 1px;
+  width: 18px;
+  background: white;
+  transition: 0.5s;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s; /* If you want a transition effect */
-  padding: 20px;
+.search-icon {
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+@media (max-width: 768px) {
+  .show {
+      background-color: #000000;
+  }
+
+  .nav-links {
+      position: fixed;
+      top: 44px;
+      right: 0;
+      height: 0;
+      width: 100%;
+      background: #333333;
+      flex-direction: column;
+      justify-content: flex-start;
+      transition: height 2s cubic-bezier(0.19, 1, 0.22, 1),
+          background-color 0.3s;
+  }
+
+  .show .nav-links {
+      height: 100%;
+      background-color: #000000;
+  }
+
+  .nav-links a {
+      height: 0;
+      width: 0;
+      opacity: 0;
+      overflow: hidden;
+      margin-right: 50px;
+      margin-left: 50px;
+      transition: opacity 1.5s, height 2s;
+  }
+
+  .show .nav-links a {
+      opacity: 1;
+      width: auto;
+      height: auto;
+  }
+
+  .nav-icon {
+      order: 1;
+      display: grid;
+  }
+
+  .logo {
+      order: 2;
+  }
+
+  .search-icon {
+      order: 3;
+  }
+}
+
+.show .one {
+  transform: rotate(45deg) translateY(5.5px);
+}
+
+.show .two {
+  transform: rotate(-45deg) translateY(-5.5px);
+}
+
+.content {
+  max-width: 1024px;
+  min-height: 380px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 64px;
+  margin-bottom: 0;
+  color: #111111;
+}
+
+@media (max-width: 960px) {
+  .content h1 {
+      font-size: 48px;
+  }
 }

@@ -1,69 +1,93 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact</title>
-    <link rel="stylesheet" href="design.css">
-    <style>
-        h1 {text-align: center;}
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive navigation</title>
 </head>
 
 <body>
-    <header>
-        <h1>Contact Me</h1>
-        <div id="mySidebar" class="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutme.html">About Me</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
+    <nav>
+        <div class="nav-content">
+
+            <!-- logo -->
+            <a href="" class="logo">
+                <svg width="18" height="44" display="block">
+                    <circle cx="9" cy="22" r="8" stroke="white" stroke-width="1.5" fill="white" />
+                </svg>
+            </a>
+
+            <!-- navigation button -->
+            <div class="nav-icon">
+                <div class="bar one"></div>
+                <div class="bar two"></div>
+            </div>
+
+            <!-- naviagtion links -->
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="aboutme.html">About Me</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <svg class="search-icon" viewBox="0 0 3.7041668 11.641667" height="44" width="14">
+                <g transform="matrix(0.97865947,0,0,0.97865947,-18.209185,-74.390797)">
+                    <path
+                        d="m 19.070369,80.532362 c -0.618144,0.618143 -0.619255,1.62581 -7.32e-4,2.244333 0.570867,0.570865 1.473777,0.613735 2.095614,0.131181 l 0.945308,0.945309 0.280633,-0.280633 -0.945308,-0.945309 c 0.482552,-0.621838 0.439684,-1.524746 -0.131182,-2.095613 -0.618523,-0.618523 -1.62619,-0.617413 -2.244333,7.32e-4 z m 0.280632,0.280632 c 0.466517,-0.466515 1.216631,-0.467898 1.683433,-0.0011 0.466802,0.466801 0.466882,1.218378 3.64e-4,1.684894 -0.466512,0.466513 -1.21809,0.466436 -1.684892,-3.67e-4 -0.466803,-0.466801 -0.465418,-1.216918 0.0011,-1.683432 z"
+                        fill="white" />
+                </g>
+            </svg>
         </div>
+    </nav>
 
-        <div id="main">
-            <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
-            <h2>LinkedIn</h2>
-            <a href="https://www.linkedin.com/in/romario-barahona-707391243/">LinkedIn Profile</a>
 
-            <h2>Github</h2>
-            <a href="https://github.com/RomarioBarahona">Github Page</a>
+    <div class="main">
 
-            <h2>Email</h2>
-            <a href="mailto:romario.barahona@gmail.com">Email Me</a>
+        <h2>LinkedIn</h2>
+        <a href="https://www.linkedin.com/in/romario-barahona-707391243/">LinkedIn Profile</a>
 
-            <h2>Shoot me a message</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+        <h2>Github</h2>
+        <a href="https://github.com/RomarioBarahona">Github Page</a>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <h2>Email</h2>
+        <a href="mailto:romario.barahona@gmail.com">Email Me</a>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+        <h2>Shoot me a message</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-                <button type="submit">Send</button>
-            </form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-            <footer>
-                <p>&copy; 2023 My Website. All rights reserved.</p>
-            </footer>
-        </div>
-    </header>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+
+        <footer>
+            <p>&copy; 2023 My Website. All rights reserved.</p>
+        </footer>
+    </div>
+
 
     <script>
-        //JavaScript code for Expanding and Collapsing the Navigation Menu
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
+        const navIcon = document.querySelector(".nav-icon");
+        const nav = document.querySelector("nav");
 
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
+        navIcon.onclick = function () {
+            nav.classList.toggle('show');
         }
     </script>
+
 </body>
 
 </html>

@@ -1,19 +1,7 @@
-// Open the sidebar
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-}
+//add and remove the show class from the navigation bar on click
+const navIcon = document.querySelector(".nav-icon");
+const nav = document.querySelector("nav");
 
-// Close the sidebar
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-}
-
-// Toggle the sidebar open or closed when the open button is clicked
-function toggleNav() {
-  const sidebar = document.getElementById("mySidebar");
-  if (sidebar.style.width === "250px") {
-    closeNav();
-  } else {
-    openNav();
-  }
+navIcon.onclick = function () {
+    nav.classList.toggle('show');
 }
